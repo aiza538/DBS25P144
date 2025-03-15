@@ -19,7 +19,13 @@ namespace MidProjectDb
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            Events eventForm = new Events();
+            eventForm.Show();
+        }
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            Participants participantForm = new Participants();
+            participantForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
