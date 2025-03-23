@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-
 namespace MidProjectDb
 {
     public partial class Form10 : Form
@@ -41,10 +40,10 @@ namespace MidProjectDb
 
             foreach (DataRow row in dt.Rows)
             {
-                eventNames.Add(row["event_name"]); // Direct add without casting
+                eventNames.Add(row["event_name"]); 
             }
 
-            return (string[])eventNames.ToArray(typeof(string)); // Convert to string array
+            return (string[])eventNames.ToArray(typeof(string)); 
         }
         private string[] GetCommitteeNames()
         {
@@ -54,13 +53,11 @@ namespace MidProjectDb
 
             foreach (DataRow row in dt.Rows)
             {
-                committeeNames.Add(row["committee_name"]); // Direct add without casting
+                committeeNames.Add(row["committee_name"]); 
             }
 
-            return (string[])committeeNames.ToArray(typeof(string)); // Convert to string array
+            return (string[])committeeNames.ToArray(typeof(string)); 
         }
-
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -85,7 +82,6 @@ namespace MidProjectDb
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string reportType = comboBox1.Text;
@@ -176,7 +172,6 @@ namespace MidProjectDb
 
             
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
@@ -189,21 +184,13 @@ namespace MidProjectDb
             {
                 Filter = "Excel Files|*.xlsx",
                 Title = "Save as Excel"
-            };
-
-            
+            };   
         }
-        
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){ }
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide(); // Hide the current form
-            Form1 previousForm = new Form1(); // Create an instance of the previous form
+            this.Hide();
+            Form1 previousForm = new Form1(); 
             previousForm.Show();
         }
     }

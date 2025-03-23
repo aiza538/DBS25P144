@@ -21,7 +21,6 @@ namespace MidProjectDb
             InitializeComponent();
             LoadData();
         }
-
         private void label1_Click(object sender, EventArgs e){ }
 
         private void textBox1_TextChanged(object sender, EventArgs e){ }
@@ -86,14 +85,13 @@ namespace MidProjectDb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inserting participant: " + ex.Message); // 🔴 Now it will show the actual error message!
+                MessageBox.Show("Error inserting participant: " + ex.Message);
             }
             finally
             {
                 LoadData();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string query = "UPDATE participants SET email=@email, contact=@contact, institute=@institute, role_id=@role_id " +
@@ -112,7 +110,6 @@ namespace MidProjectDb
             MessageBox.Show("Participant Updated!");
             LoadData();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             string query = "DELETE FROM participants WHERE name=@name";
@@ -129,8 +126,7 @@ namespace MidProjectDb
         {
             string query = "SELECT * FROM participants";
             dataGridView1.DataSource = dbHelper.GetDataTable(query);
-        }
-        
+        }     
         private void LoadComboBoxes()
         {
             comboBox1.DataSource = dbHelper.GetDataTable("SELECT value FROM lookup WHERE category = 'role'");
@@ -139,7 +135,6 @@ namespace MidProjectDb
             comboBox2.DataSource = dbHelper.GetDataTable("SELECT value FROM lookup WHERE category = 'payment_status'");
             comboBox2.DisplayMember = "value";
         }
-
         private void LoadCheckedListBox()
         {
             DataTable dt = dbHelper.GetDataTable("SELECT event_name FROM itec_events");
@@ -149,7 +144,6 @@ namespace MidProjectDb
                 checkedListBox1.Items.Add(row["event_name"].ToString());
             }
         }
-
         private string GetSelectedEvents() 
         {
             string selectedEvents = "";
@@ -179,7 +173,6 @@ namespace MidProjectDb
         {
             return GetLookupId("SELECT event_id FROM itec_events WHERE event_name = @value", eventName);
         }
-
         private int GetLookupId(string query, string value)
         {
             MySqlParameter[] parameters = { new MySqlParameter("@value", value) };

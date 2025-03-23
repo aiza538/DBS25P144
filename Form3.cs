@@ -20,8 +20,7 @@ namespace MidProjectDb
             InitializeComponent();
             LoadComboBoxes();
             LoadEvents();
-        }
-        
+        }     
         private void label1_Click(object sender, EventArgs e){ }
 
         private void label2_Click(object sender, EventArgs e){ }
@@ -82,7 +81,6 @@ namespace MidProjectDb
                  MessageBox.Show("Error Loading ComboBoxes: " + ex.Message);
            }
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e){ }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e){ }
@@ -152,7 +150,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -193,7 +190,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please select an event to update.");
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -218,7 +214,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please select an event to delete.");
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -232,7 +227,6 @@ namespace MidProjectDb
                 comboBox3.SelectedValue = row.Cells["committee_id"].Value; 
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide(); 

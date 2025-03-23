@@ -41,7 +41,6 @@ namespace MidProjectDb
             comboBox3.DisplayMember = "value";
             
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){ }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e){ }
@@ -89,7 +88,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error saving task.");
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -129,7 +127,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error updating task.");
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -156,7 +153,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error removing task.");
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

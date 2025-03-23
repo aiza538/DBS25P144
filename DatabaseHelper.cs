@@ -34,6 +34,7 @@ namespace MidProjectDb
             return new MySqlConnection(connectionString);
         }
 
+
         public bool ExecuteParameterizedQuery(string query, object[] parameters)
         {
             try
@@ -100,33 +101,33 @@ namespace MidProjectDb
             return result;
         }
        public DataTable ExecuteQuery(string query, MySqlParameter[] parameters = null)
-{
-    DataTable dataTable = new DataTable();
-    try
-    {
-        using (var connection = GetConnection())  
-        {
-            connection.Open();
-            using (MySqlCommand cmd = new MySqlCommand(query, connection)) 
+       {
+            DataTable dataTable = new DataTable();
+            try
             {
-                if (parameters != null)
+                using (var connection = GetConnection())  
                 {
-                    cmd.Parameters.AddRange(parameters);
-                }
+                    connection.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection)) 
+                    {
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
 
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
-                {
-                    adapter.Fill(dataTable);
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+                    }
                 }
             }
-        }
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("Error executing query: " + ex.Message);
-    }
-    return dataTable;
-}
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error executing query: " + ex.Message);
+            }
+            return dataTable;
+       }
 
         public bool ExecuteNonQuery(string query, MySqlParameter[] parameters)
         {
@@ -261,4 +262,3 @@ namespace MidProjectDb
 
     }
 }
-

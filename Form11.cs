@@ -27,7 +27,6 @@ namespace MidProjectDb
         }
         private void LoadRoles()
         {
-
             comboBox1.Items.Clear();
             string query = "SELECT role_id, role_name FROM roles";
             DataTable dt = dbHelper.GetDataTable(query);
@@ -110,7 +109,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim();
@@ -143,7 +141,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error updating user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim();
@@ -168,12 +165,11 @@ namespace MidProjectDb
                 MessageBox.Show("Error removing user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex >= 0) // Ensure row index is valid
+                if (e.RowIndex >= 0) 
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 

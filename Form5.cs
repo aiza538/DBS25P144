@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace MidProjectDb
 {
-
     public partial class Form5: Form
     {
         DatabaseHelper dbHelper = DatabaseHelper.Instance;
@@ -87,7 +86,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please enter a committee name.");
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0 && !string.IsNullOrWhiteSpace(textBox1.Text))
@@ -103,7 +101,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please select a committee and enter a name.");
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -118,7 +115,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please select a committee to delete.");
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedValue != null && comboBox2.SelectedValue != null && !string.IsNullOrWhiteSpace(textBox1.Text))
@@ -148,8 +144,6 @@ namespace MidProjectDb
                 MessageBox.Show("Please fill in all member details.");
             }
         }
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -158,7 +152,6 @@ namespace MidProjectDb
                 LoadCommitteeMembers(committeeId);
             }
         }
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -172,7 +165,6 @@ namespace MidProjectDb
                     comboBox2.Text = row.Cells["role"].Value.ToString();
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Form1 previousForm = Application.OpenForms["Form1"] as Form1;
@@ -186,7 +178,6 @@ namespace MidProjectDb
                 previousForm = new Form1(); 
                 previousForm.Show();
             }
-
             this.Close();
         }
     }

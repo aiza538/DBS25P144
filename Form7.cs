@@ -53,8 +53,6 @@ namespace MidProjectDb
             DataTable typeData = dbHelper.GetData("SELECT lookup_id AS type_id, value FROM lookup WHERE category = 'TransactionType'");
             comboBox1.DataSource = typeData;
             comboBox1.DisplayMember = "value";
-            
-
 
             DataTable sponsorData = dbHelper.GetData("SELECT sponsor_id, sponsor_name FROM sponsors");
             comboBox2.DataSource = sponsorData;
@@ -117,8 +115,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error saving record.");
             }
         }
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -164,7 +160,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error updating record.");
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -191,7 +186,6 @@ namespace MidProjectDb
                 MessageBox.Show("Error deleting record.");
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -230,7 +224,6 @@ namespace MidProjectDb
             }
             return null;
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide(); 
